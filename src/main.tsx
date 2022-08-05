@@ -10,13 +10,14 @@ const baseElement = document.querySelector("#root");
 
 if (baseElement) {
     const root = ReactDOM.createRoot(baseElement);
+    const baseUrl = import.meta.env.BASE_URL
     root.render(
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<IndexPage/>}/>
-                <Route path="/memory" element={<MemoryListPage/>}/>
-                <Route path="/memory/:memoryId" element={<MemoryDetailPage/>}/>
-                <Route path="/tap" element={<TapPage/>}/>
+                <Route path={baseUrl} element={<IndexPage/>}/>
+                <Route path={baseUrl+"memory"} element={<MemoryListPage/>}/>
+                <Route path={baseUrl+"memory/:memoryId"} element={<MemoryDetailPage/>}/>
+                <Route path={baseUrl+"tap"} element={<TapPage/>}/>
             </Routes>
         </BrowserRouter>
     );
