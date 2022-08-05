@@ -5,6 +5,7 @@ import {IndexPage} from "./pages";
 import {TapPage} from "./pages/tap";
 import {MemoryDetailPage} from "./pages/memory/_id";
 import {MemoryListPage} from "./pages/memory";
+import {Nest} from "./components/nest";
 
 const baseElement = document.querySelector("#root");
 
@@ -14,11 +15,15 @@ if (baseElement) {
     root.render(
         <BrowserRouter>
             <Routes>
-                <Route path={baseUrl} element={<IndexPage/>}/>
-                <Route path={baseUrl+"memory"} element={<MemoryListPage/>}/>
-                <Route path={baseUrl+"memory/:memoryId"} element={<MemoryDetailPage/>}/>
-                <Route path={baseUrl+"tap"} element={<TapPage/>}/>
+                <Route path="/aa/" element={<Nest/>}>
+                    <Route index element={<IndexPage/>}/>
+                    <Route path="memory" element={<Nest/>}>
+                        <Route index element={<MemoryListPage/>} />
+                        <Route path=":memoryId" element={<MemoryDetailPage/>}/>
+                    </Route>
+                    <Route path="tap" element={<TapPage/>}/>
+                </Route>
             </Routes>
         </BrowserRouter>
-    );
+    )
 }

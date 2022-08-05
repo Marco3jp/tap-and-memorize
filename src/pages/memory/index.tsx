@@ -9,7 +9,7 @@ export function MemoryListPage() {
             <ul>
                 <li><Link to="sample">sample</Link></li>
                 <li><Link to="test">test</Link></li>
-                <li><Link to="../">top</Link></li>
+                <li><Link to="../../">top</Link></li>
             </ul>
         </div>
     )
