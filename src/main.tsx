@@ -15,7 +15,7 @@ if (baseElement) {
     root.render(
         <BrowserRouter>
             <Routes>
-                <Route path="/aa/" element={<Nest/>}>
+                <Route path={baseUrl} element={<Nest/>}>
                     <Route index element={<IndexPage/>}/>
                     <Route path="memory" element={<Nest/>}>
                         <Route index element={<MemoryListPage/>} />
